@@ -21,11 +21,6 @@ if [[ $apache2 == *"Apache"* ]]; then
 else sudo apt install apache2
 fi
 
-servstat=$( sudo systemctl status apache2 )
-
-if [[ $servstat == *"inactive (dead)"* ]]; then
-	echo "staring apache2 service"
-	sudo systemctl start apache2
 if [[ $apache2_status == *"inactive (dead)"* ]]; then
         echo "staring apache2 service"
         sudo systemctl start apache2
