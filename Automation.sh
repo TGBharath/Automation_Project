@@ -27,14 +27,10 @@ if [[ $apache2_status == *"inactive (dead)"* ]]; then
 else echo "apache2 service is running"
 fi
 
-myname=Bharath
 
 #to upload log files to s3 bucket
 
 timestamp=$(date '+%d%m%Y-%H%M%S')
-s3_bucket='upgrad-bharathtg'
-cd /tmp
-tar -cvf ${myname}-httpd-logs-${timestamp}.tar /var/log/apache2
 
 tar -czvf /tmp/${myname}-httpd-logs-${timestamp}.tar /var/log/apache2/*.log
 
