@@ -7,7 +7,7 @@ myname=Bharath
 s3_bucket='upgrad-bharathtg'
 cron_file='/etc/cron.d/automation'
 bookkeeping='/var/www/html/inventory.html'
-size=$(stat -c %s /tmp/${myname}-httpd-logs-${timestamp}.tar)
+
 
 #to update packages
 
@@ -49,6 +49,8 @@ s3://${s3_bucket}/${myname}-httpd-logs-${timestamp}.tar
 
 
 #to cron the script
+
+size=$(stat -c %s /tmp/${myname}-httpd-logs-${timestamp}.tar)
 
 if test -f "$cron_file" 
 then
