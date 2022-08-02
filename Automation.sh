@@ -15,6 +15,11 @@ sudo apt update -y
 
 #to check apache2 service
 
+if [[ $apache2 == *"Apache"* ]]; then
+    echo "apache2 is present"
+else sudo apt install apache2
+fi
+
 if [[ $apache2_status == *"inactive (dead)"* ]]; then
         echo "staring apache2 service"
         sudo systemctl start apache2
